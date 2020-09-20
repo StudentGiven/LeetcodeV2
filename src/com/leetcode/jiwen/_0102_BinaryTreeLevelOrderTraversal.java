@@ -25,6 +25,10 @@ public class _0102_BinaryTreeLevelOrderTraversal {
         }
     }
 
+	/**
+	 * Time: O(n)
+	 * Space: O(n)
+	 */
     public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> res = new ArrayList<>();
 
