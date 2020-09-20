@@ -3,7 +3,7 @@ import java.util.PriorityQueue;
 public class _0215_KthLargestElementInAnArray {
 
 	/**
-	 * Time: O(nlgk)
+	 * Time: O(k + (n - k)lgk)
 	 * Space: O(k)
 	 */
 	public int findKthLargest(int[] nums, int k) {
