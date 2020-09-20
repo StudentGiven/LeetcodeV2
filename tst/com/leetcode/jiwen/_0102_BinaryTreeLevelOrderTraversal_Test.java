@@ -9,7 +9,7 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 public class _0102_BinaryTreeLevelOrderTraversal_Test {
-	
+
     @Test
     public void test1() {
         /*
@@ -39,16 +39,16 @@ public class _0102_BinaryTreeLevelOrderTraversal_Test {
         */
         final List<List<Integer>> expectedRes = new ArrayList<>();
         final List<Integer> result_Level_0 = new ArrayList<>();
-	    final List<Integer> result_Level_1 = new ArrayList<>();
-	    final List<Integer> result_Level_2 = new ArrayList<>();
-	    result_Level_0.add(3);
-	    result_Level_1.add(9);
-	    result_Level_1.add(20);
-	    result_Level_2.add(15);
-	    result_Level_2.add(7);
+        final List<Integer> result_Level_1 = new ArrayList<>();
+        final List<Integer> result_Level_2 = new ArrayList<>();
+        result_Level_0.add(3);
+        result_Level_1.add(9);
+        result_Level_1.add(20);
+        result_Level_2.add(15);
+        result_Level_2.add(7);
         expectedRes.add(result_Level_0);
-	    expectedRes.add(result_Level_1);
-	    expectedRes.add(result_Level_2);
+        expectedRes.add(result_Level_1);
+        expectedRes.add(result_Level_2);
 
         _0102_BinaryTreeLevelOrderTraversal myClass = new _0102_BinaryTreeLevelOrderTraversal();
         assertEquals(expectedRes, myClass.levelOrder(node_Index_0));
