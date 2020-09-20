@@ -1,7 +1,12 @@
 import java.util.PriorityQueue;
 
 public class _0215_KthLargestElementInAnArray {
-    public int findKthLargest(int[] nums, int k) {
+
+	/**
+	 * Time: O(nlgk)
+	 * Space: O(k)
+	 */
+	public int findKthLargest(int[] nums, int k) {
 
 	    PriorityQueue<Integer> minHeap =
 			    new PriorityQueue<Integer>(k + 1);
