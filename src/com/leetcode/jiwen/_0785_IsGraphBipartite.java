@@ -37,6 +37,4 @@ public class _0785_IsGraphBipartite {
 
         return true;
     }
-
-    // Just a test to see contribution works
 }
