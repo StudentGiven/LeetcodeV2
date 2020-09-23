@@ -29,7 +29,7 @@ public class _0958_CheckCompletenessOfaBinaryTree {
 	 */
 	public boolean isCompleteTree(TreeNode root) {
 		Queue<TreeNode> queue = new LinkedList<TreeNode>();
-		boolean flag = false;
+		boolean flag = false; // true means reach the end
 		queue.offer(root);
 
 		while (!queue.isEmpty()) {
