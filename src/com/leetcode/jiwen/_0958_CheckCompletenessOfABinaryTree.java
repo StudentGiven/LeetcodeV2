@@ -3,7 +3,7 @@ package com.leetcode.jiwen;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class _0958_CheckCompletenessOfaBinaryTree {
+public class _0958_CheckCompletenessOfABinaryTree {
 
 	public static class TreeNode {
 		int val;
