@@ -21,6 +21,11 @@ public class _0378_KthSmallestElementInASortedMatrix {
 		}
 	}
 
+	/**
+	 * x = min(k, n)
+	 * Time: O(x + klgx)
+	 * Space: O(x)
+	 */
 	public int kthSmallest(int[][] matrix, int k) {
 		int n = matrix.length;
 		PriorityQueue<Cell> queue = new PriorityQueue<>();
