@@ -5,7 +5,7 @@ import java.util.PriorityQueue;
 
 public class _0378_KthSmallestElementInASortedMatrix {
 
-	class Cell {
+	static class Cell {
 		int row;
 		int column;
 		int value;
