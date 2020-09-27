@@ -36,20 +36,20 @@ public class _0102_BinaryTreeLevelOrderTraversal {
             return res;
         }
 
-        Queue<TreeNode> q = new LinkedList<>();
-        q.offer(root);
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
 
-        while (!q.isEmpty()) {
-            int size = q.size(); // size = # of nodes in the current layer.
+        while (!queue.isEmpty()) {
+            int size = queue.size(); // size = # of nodes in the current layer.
             List<Integer> currLevel = new ArrayList<>();
             for (int i = 0; i < size; i++) {
-                TreeNode currNode = q.poll();
+                TreeNode currNode = queue.poll();
                 currLevel.add(currNode.val);
                 if (currNode.left != null) {
-                    q.offer(currNode.left);
+                    queue.offer(currNode.left);
                 }
                 if (currNode.right != null) {
-                    q.offer(currNode.right);
+                    queue.offer(currNode.right);
                 }
             }
             res.add(currLevel);
