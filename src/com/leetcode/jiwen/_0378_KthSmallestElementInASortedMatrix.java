@@ -24,10 +24,13 @@ public class _0378_KthSmallestElementInASortedMatrix {
 	 */
 	public int kthSmallest(int[][] matrix, int k) {
 		int n = matrix.length;
-		PriorityQueue<Cell> minHeap = new PriorityQueue<>(k, new Comparator<Cell>() {
+		PriorityQueue<Cell> minHeap = new PriorityQueue<>(new Comparator<Cell>() {
 			@Override
 			public int compare(Cell c1, Cell c2) {
-				return c1.value - c2.value;
+				if (c1.value == c2.value) {
+					return 0;
+				}
+				return c1.value < c2.value ? -1 : 1;
 			}
 		});
 		boolean[][] visited = new boolean[n][n];
