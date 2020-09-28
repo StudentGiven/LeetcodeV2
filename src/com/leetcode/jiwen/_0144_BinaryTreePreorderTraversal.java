@@ -24,6 +24,12 @@ public class _0144_BinaryTreePreorderTraversal {
 		}
 	}
 
+	/**
+	 * Recursive method with List as returning value.
+	 *
+	 * Time:
+	 * Space:
+	 */
 	public List<Integer> preorderTraversal_1(TreeNode root) {
 		List<Integer> pre = new LinkedList<Integer>();
 		if(root==null) return pre;
@@ -33,6 +39,14 @@ public class _0144_BinaryTreePreorderTraversal {
 		return pre;
 	}
 
+	/**
+	 * Recursive method with Helper method to have a List as paramater,
+	 * so we can modify the parameter and don't have to instantiate a
+	 * new List at each recursive call.
+	 *
+	 * Time:
+	 * Space:
+	 */
 	public List<Integer> preorderTraversal_2(TreeNode root) {
 		List<Integer> pre = new LinkedList<Integer>();
 		preHelper(root,pre);
@@ -46,6 +60,12 @@ public class _0144_BinaryTreePreorderTraversal {
 		preHelper(root.right,pre);
 	}
 
+	/**
+	 * Iterative method with Stack.
+	 *
+	 * Time:
+	 * Space:
+	 */
 	public List<Integer> preorderTraversal_3(TreeNode root) {
 		List<Integer> pre = new LinkedList<Integer>();
 		if(root==null) return pre;
