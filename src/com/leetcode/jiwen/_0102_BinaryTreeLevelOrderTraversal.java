@@ -40,7 +40,7 @@ public class _0102_BinaryTreeLevelOrderTraversal {
         queue.offer(root);
 
         while (!queue.isEmpty()) {
-            int size = queue.size(); // size = # of nodes in the current layer.
+            int size = queue.size(); // size = number of nodes in the current layer.
             List<Integer> currLevel = new ArrayList<>();
             for (int i = 0; i < size; i++) {
                 TreeNode currNode = queue.poll();
