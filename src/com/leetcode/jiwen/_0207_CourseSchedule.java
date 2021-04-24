@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 
-public class _0207_CourseSchsdule {
+public class _0207_CourseSchedule {
     public boolean canFinish(int numCourses, int[][] prerequisites) {
         // Create graph
         int[] inDegree = new int[numCourses];
