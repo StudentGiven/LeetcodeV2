@@ -33,6 +33,6 @@ public class _1348_TweetCountsPerFrequency_Test {
 
         assertEquals(expectedResult1, result1);
         assertEquals(expectedResult2, result2);
-        assertEquals(expectedResult2, result3);
+        assertEquals(expectedResult3, result3);
     }
 }

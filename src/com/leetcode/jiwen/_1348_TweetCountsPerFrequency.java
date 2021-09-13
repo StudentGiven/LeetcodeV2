@@ -47,6 +47,9 @@ public class _1348_TweetCountsPerFrequency {
         for (int i = 0; i < intervalPoints.size() - 1; i = i + 2) {
             int startIndex = binarySearch(timeline, intervalPoints.get(i));
             int endIndex = binarySearch(timeline, intervalPoints.get(i + 1));
+            if (timeline.contains(intervalPoints.get(i)) && intervalPoints.get(i).equals(intervalPoints.get(i + 1))) {
+                endIndex = endIndex + 1;
+            }
             result.add(endIndex - startIndex);
         }
         
