@@ -77,14 +77,14 @@ public class _1348_TweetCountsPerFrequency {
         int start = 0;
         int end = list.size() - 1;
 
-        while (start <= end) {
+        while (start + 1 < end) {
             int mid = start + (end - start) / 2;
             if (list.get(mid) == target) {
                 return mid;
             } else if (list.get(mid) > target) {
-                end = mid - 1;
+                end = mid;
             } else {
-                start = mid + 1;
+                start = mid;
             }
         }
         
