@@ -41,6 +41,5 @@ public class _0529_Minesweeper {
         }
 
         return board;
-
     }
 }
