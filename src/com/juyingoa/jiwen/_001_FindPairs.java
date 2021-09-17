@@ -20,7 +20,26 @@ public class _001_FindPairs {
      *     · each element of array A is an integer within the range [-1,000,000 ... 1,000,000].
      */
 
-    public boolean solution(int[] A) {
+    /*
+       Bit Manipulation
+       Concept
+        · If we take XOR of zero and some bit, it will return that bit
+            a ⊕ 0 = a
+        · If we take XOR of two same bits, it will return 0
+            a ⊕ a = 0
+        · a ⊕ b ⊕ a = (a ⊕ a) ⊕ b = 0 ⊕ b = b
+       So we can XOR all bits together to see if we get 0 or not.
+     */
 
+    public boolean solution(int[] A) {
+        if (A.length % 2 == 1) {
+            return false;
+        }
+
+        int a = 0;
+        for (int i : A) {
+            a ^= i;
+        }
+        return a == 0;
     }
 }
