@@ -12,15 +12,15 @@ public class _004_ReturnSign {
      */
 
     public int solution(int[] A) {
-        int count_negative = 0;
+        int sign = 1;
         for (int j : A) {
             if (j == 0) {
                 return 0;
             }
             if (j < 0) {
-                count_negative++;
+                sign = -sign;
             }
         }
-        return (count_negative % 2) == 0 ? 1 : -1;
+        return sign;
     }
 }
