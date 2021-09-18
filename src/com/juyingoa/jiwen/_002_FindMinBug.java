@@ -1,5 +1,7 @@
 package com.juyingoa.jiwen;
 
+import java.util.Random;
+
 public class _002_FindMinBug {
 
     /**
@@ -53,7 +55,11 @@ public class _002_FindMinBug {
 
     public int[] solution(int N) {
         int[] result = new int[N];
-
+        Random random = new Random();
+        for (int i = 0; i < N; i++) {
+            result[i] = random.nextInt(100000) + 1; // From 1 to 100001
+        }
+        result[0] = -result[0];
         return result;
     }
 
