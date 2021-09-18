@@ -31,7 +31,7 @@ public class _002_FindMinBug {
      *     · N is an integer within the range [1 ... 1,000].
      */
 
-     public int find_min(int[] A) {
+     public int find_min_wrong(int[] A) {
          int ans = 0;
          for (int i = 1; i < A.length; i++) {
              if (ans > A[i]) {
@@ -41,8 +41,20 @@ public class _002_FindMinBug {
          return ans;
      }
 
-     public int[] solution(int N) {
+    public int find_min_correct(int[] A) {
+        int ans = A[0];
+        for (int i = 1; i < A.length; i++) {
+            if (ans > A[i]) {
+                ans = A[i];
+            }
+        }
+        return ans;
+    }
 
-     }
+    public int[] solution(int N) {
+        int[] result = new int[N];
+
+        return result;
+    }
 
 }
