@@ -45,7 +45,7 @@ public class _0958_CheckCompletenessOfABinaryTree {
 				queue.offer(cur.left);
 			}
 
-			if (cur.right ==null) {
+			if (cur.right == null) {
 				flag = true;
 			} else if (flag) {
 				return false;
