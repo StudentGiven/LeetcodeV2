@@ -6,26 +6,35 @@ import java.util.List;
 public class _0078_Subsets {
 
 	public List<List<Integer>> subsets(int[] nums) {
-		List<List<Integer>> res = new ArrayList<>();
+		List<List<Integer>> result = new ArrayList<>();
 		if (nums == null || nums.length == 0) {
-			return res;
+			return result;
 		}
 
-		generateSubsets(0, nums, new ArrayList<>(), res);
+		List<Integer> current = new ArrayList<>(); // record the current subset
+		dfs(nums, current, 0, result);
 
-		return res;
+		return result;
 	}
 
-	private void generateSubsets(int index,
-	                             int[] nums,
-	                             List<Integer> current,
-	                             List<List<Integer>> subsets) {
-		subsets.add(new ArrayList<>(current));
-
-		for (int i = 0; i < nums.length; i++) {
-			current.add(nums[i]);
-			generateSubsets(i + 1, nums, current, subsets);
-			current.remove(current.size() - 1);
+	// At each level, determine the integer at current index to be picked or not
+	public void dfs(int[] nums,
+					List<Integer> current,
+					int index,
+					List<List<Integer>> result) {
+		// Terminate condition: when the index reaches to the input end
+		if (index == nums.length) {
+			result.add(new ArrayList<>(current));
+			return;
 		}
+
+		// Pick
+		current.add(nums[index]);
+		dfs(nums, current, index + 1, result);
+		current.remove(current.size() - 1);
+
+		// Not pick
+		dfs(nums, current, index + 1, result);
+
 	}
 }
