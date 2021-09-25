@@ -1,7 +1,9 @@
 package com.leetcode.jiwen;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 import java.util.Stack;
 
 public class _0078_Subsets {
@@ -45,8 +47,8 @@ public class _0078_Subsets {
 			return result;
 		}
 
-		List<Integer> current = new ArrayList<>();
 		Stack<Integer> stack = new Stack<>();
+		List<Integer> current = new ArrayList<>();
 		stack.push(0);
 
 		while (!stack.isEmpty()) {
@@ -62,6 +64,33 @@ public class _0078_Subsets {
 			current.add(nums[index]);
 			stack.push(index + 1);
 		}
+		return result;
+	}
+
+	public List<List<Integer>> subsets_bfs(int[] nums) {
+		List<List<Integer>> result = new ArrayList<>();
+		if (nums == null || nums.length == 0) {
+			return result;
+		}
+
+		Queue<List<Integer>> queue = new LinkedList<>();
+		queue.offer(new ArrayList<Integer>());
+
+		for (int i = 0; i < nums.length; i++) {
+			int levelSize = queue.size();
+			for (int j = 0; j < levelSize; j++) {
+				List<Integer> current = queue.poll();
+
+				List<Integer> leftChild = new ArrayList<>(current);;
+				queue.offer(leftChild);
+
+				List<Integer> rightChild = new ArrayList<>(current);
+				rightChild.add(nums[i]);
+				queue.offer(rightChild);
+			}
+		}
+
+		result.addAll(queue);
 		return result;
 	}
 }
