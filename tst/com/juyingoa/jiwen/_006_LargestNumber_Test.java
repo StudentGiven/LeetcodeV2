@@ -12,7 +12,4 @@ public class _006_LargestNumber_Test {
         int expected_result = 972;
         assertEquals(expected_result, myClass.solution(762, 3));
     }
-
-
-
 }
