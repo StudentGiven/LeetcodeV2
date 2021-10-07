@@ -14,12 +14,12 @@ public class _0518_CoinChange2 {
     }
 
     private void dfs(int[] coins, int amount, int index, int[] result, List<Integer> currentList) {
-        if (amount == 0) {
-            result[0]++;
-            return;
-        }
-
-        if (amount < 0 || index > coins.length - 1) {
+        // This can also be done at index == coins.length where all the coins have been picked.
+        // But a probably better one is at previous level to reduce the number of unnecessary branches in the DFS.
+        if (index == coins.length - 1) {
+            if (amount % coins[coins.length - 1] == 0) {
+                result[0]++;
+            }
             return;
         }
 
