@@ -32,6 +32,7 @@ public class _0518_CoinChange2 {
         }
     }
 
+    // https://leetcode.com/problems/coin-change-2/discuss/668531/DFS-%2B-memo-to-DP
     public int change2(int amount, int[] coins) {
         int[][] memo = new int[coins.length][amount + 1];
         for (int[] m : memo) {
