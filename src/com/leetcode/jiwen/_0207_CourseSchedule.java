@@ -50,4 +50,55 @@ public class _0207_CourseSchedule {
 
         return true;
     }
+
+    boolean hasCircle;
+
+    // Topological sort
+    public boolean canFinish2(int numCourses, int[][] prerequisites) {
+        ArrayList<ArrayList<Integer>> graph = new ArrayList<>();
+        hasCircle = false;
+
+        for (int i = 0; i < numCourses; i++) {
+            graph.add(new ArrayList<Integer>());
+        }
+
+        for (int i = 0; i < prerequisites.length; i++) {
+            int course = prerequisites[i][0];
+            int prerequisite = prerequisites[i][1];
+            graph.get(course).add(prerequisite);
+        }
+
+        int[] visited = new int[numCourses]; // 1 means visiting, 2 means visited
+        for (int i = 0; i < numCourses; i++) {
+            if (hasCircle) {
+                return false;
+            }
+            dfs(i, graph, visited);
+        }
+
+        return !hasCircle;
+    }
+
+    private void dfs(int current, ArrayList<ArrayList<Integer>> graph, int[] visited) {
+        if (visited[current] == 1) {
+            hasCircle = true;
+            return;
+        }
+
+        if (visited[current] == 2) {
+            return;
+        }
+
+        visited[current] = 1;
+
+        for (int next : graph.get(current)) {
+            if (hasCircle) {
+                return;
+            }
+            dfs(next, graph, visited);
+        }
+
+        visited[current] = 2;
+    }
+    
 }
