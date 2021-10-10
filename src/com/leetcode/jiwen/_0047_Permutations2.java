@@ -1,14 +1,17 @@
 package com.leetcode.jiwen;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
-public class _0046_Permutations {
+public class _0047_Permutations2 {
 
-    // https://leetcode.com/problems/permutations/discuss/150665/java-dfs-swap-swap
-    public List<List<Integer>> permute(int[] nums) {
+    public List<List<Integer>> permuteUnique(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
+
         dfs(result, nums, 0);
+
         return result;
     }
 
@@ -22,10 +25,13 @@ public class _0046_Permutations {
             return;
         }
 
+        Set<Integer> appeared = new HashSet<>();
         for (int i = index; i < nums.length; i++) {
-            swap(index, i, nums);
-            dfs(result, nums, index + 1);
-            swap(index, i, nums);
+            if (appeared.add(nums[i])) {
+                swap(index, i, nums);
+                dfs(result, nums, index + 1);
+                swap(index, i, nums);
+            }
         }
     }
 
@@ -34,6 +40,4 @@ public class _0046_Permutations {
         nums[i] = nums[index];
         nums[index] = tmp;
     }
-
-
 }
