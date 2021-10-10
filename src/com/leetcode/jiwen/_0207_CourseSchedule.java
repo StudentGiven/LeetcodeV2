@@ -55,7 +55,7 @@ public class _0207_CourseSchedule {
 
     // Topological sort
     public boolean canFinish2(int numCourses, int[][] prerequisites) {
-        ArrayList<ArrayList<Integer>> graph = new ArrayList<>();
+        List<List<Integer>> graph = new ArrayList<>();
         hasCircle = false;
 
         for (int i = 0; i < numCourses; i++) {
@@ -79,7 +79,7 @@ public class _0207_CourseSchedule {
         return !hasCircle;
     }
 
-    private void dfs(int current, ArrayList<ArrayList<Integer>> graph, int[] visited) {
+    private void dfs(int current, List<List<Integer>> graph, int[] visited) {
         if (visited[current] == 1) {
             hasCircle = true;
             return;
