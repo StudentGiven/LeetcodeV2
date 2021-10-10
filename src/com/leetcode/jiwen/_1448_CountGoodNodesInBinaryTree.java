@@ -16,24 +16,32 @@ public class _1448_CountGoodNodesInBinaryTree {
         }
     }
 
+    int result;
+
     public int goodNodes(TreeNode root) {
+        result = 0;
+
         if (root == null) {
-            return 0;
+            return result;
         }
 
-        return dfs(root, root.val);
+        dfs(root, root.val);
+
+        return result;
     }
 
-    private int dfs(TreeNode node, int max) {
+    private void dfs(TreeNode node, int max) {
         if (node == null) {
-            return 0;
+            return;
+        }
+
+        if (node.val >= max) {
+            result++;
         }
 
         max = Math.max(node.val, max);
-        int result = (node.val >= max ? 1 : 0) +
-                dfs(node.left, max) +
-                dfs(node.right, max);
 
-        return result;
+        dfs(node.left, max);
+        dfs(node.right, max);
     }
 }
